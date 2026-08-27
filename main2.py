@@ -4,15 +4,15 @@ import numpy as np
 
 
 
-left = cv2.imread(r"C:\Users\abdul\OneDrive\Desktop\task9 cv\im1.1.png",cv2.IMREAD_GRAYSCALE)
+left = cv2.imread(r"C:\Users\abdul\OneDrive\Desktop\task9 cv\im0.png",cv2.IMREAD_GRAYSCALE)
 
-right = cv2.imread(r"C:\Users\abdul\OneDrive\Desktop\task9 cv\im1.2.png", cv2.IMREAD_GRAYSCALE)
-
-
+right = cv2.imread(r"C:\Users\abdul\OneDrive\Desktop\task9 cv\im1.png",cv2.IMREAD_GRAYSCALE)
 
 
 
-stereo = cv2.StereoBM_create( numDisparities=288, blockSize=15)
+
+
+stereo = cv2.StereoBM_create( numDisparities=400, blockSize=15)
 
 
 
@@ -29,9 +29,9 @@ disp_norm = disp_norm.astype(np.uint8)
 
 
 
-focal_length = 979.911
+focal_length = 6338.47 
 
-base_line = 193.001 / 1000
+base_line = 171.548 / 1000
 
 
 
@@ -74,7 +74,7 @@ cv2.resizeWindow("Disparity", 800, 600)
 cv2.imshow("Left", left)
 cv2.imshow("Right", right)
 cv2.imshow("Disparity", disp_norm)
-cv2.imwrite("image.png", disparity)
+cv2.imwrite("image2.png", disparity)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
